@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         direction.y += gravity*Time.deltaTime;
         // Movement
         if(Input.GetKeyDown(KeyCode.D)) desiredLane++;
-        if(Input.GetKeyDown(KeyCode.A)) desiredLane--;
+        else if(Input.GetKeyDown(KeyCode.A)) desiredLane--;
         if(controller.isGrounded)
         {
             direction.y = -1;
