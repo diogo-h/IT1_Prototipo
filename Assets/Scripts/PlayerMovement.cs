@@ -24,8 +24,12 @@ public class PlayerMovement : MonoBehaviour
         direction.z = forwardSpeed;
         direction.y += gravity*Time.deltaTime;
         // Movement
-        if(Input.GetKeyDown(KeyCode.D)) desiredLane++;
-        else if(Input.GetKeyDown(KeyCode.A)) desiredLane--;
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            if(desiredLane == 0) desiredLane ++;
+            else if(desiredLane == 1) desiredLane--;
+        }
+        
         if(controller.isGrounded)
         {
             direction.y = -1;
@@ -33,15 +37,18 @@ public class PlayerMovement : MonoBehaviour
         }
         else direction.y += gravity * Time.deltaTime;
 
-
         // Future Position
         targetPosition = transform.position.z * transform.forward + 
             transform.position.y * transform.up;
 
         if(desiredLane == 0) targetPosition += Vector3.left * laneDistance;
         else if (desiredLane == 1) targetPosition += Vector3.right * laneDistance;
+        else
+        {
+            if(desiredLane < 0)targetPosition += Vector3.left * laneDistance;
+            else if(desiredLane > 1) targetPosition += Vector3.right * laneDistance;
+        }
         transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
-
     }
     private void FixedUpdate()
     {
