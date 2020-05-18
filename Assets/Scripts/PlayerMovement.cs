@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
     }
+
     private void FixedUpdate()
     {
         //controller.Move(direction * Time.deltaTime);
