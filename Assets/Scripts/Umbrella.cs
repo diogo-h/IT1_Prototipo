@@ -9,13 +9,13 @@ public class Umbrella : MonoBehaviour
     private void FixedUpdate()
     {
         stamina -= 0.03f;
-        //Debug.Log(stamina);
+        Debug.Log(stamina);
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
-            stamina += 1;
+            stamina += 1.0f;
             Debug.Log("Hit");
             Destroy(gameObject);
         }

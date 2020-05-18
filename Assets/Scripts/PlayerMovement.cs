@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        Debug.Log(gameObject.name);
     }
 
     private void Update()
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        controller.Move(direction * Time.deltaTime);
+        //controller.Move(direction * Time.deltaTime);
     }
 
     private void Jump()
