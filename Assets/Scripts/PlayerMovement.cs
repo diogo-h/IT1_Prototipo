@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         Debug.Log(gameObject.name);
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        anim.SetTrigger("jump");
+        anim.SetTrigger("Jump");
         direction.y = jumpForce;
     }
 }
