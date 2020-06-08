@@ -24,8 +24,9 @@ public class PlayerManager : MonoBehaviour
         characterSpeed = GetComponentInParent<Animator>();
         
         stamina -= 0.1f;
-
+        
         if(stamina < 0) stamina = 0;
+        if(stamina > 100) stamina = 100;
         if(stamina == 0)
         {
             worldSpeed.speed = 0.2f;
