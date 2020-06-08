@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     public bool gameIsPaused {get; private set;}
     
     public GameObject pauseMenuUI;
+    public GameObject deathScreenUI;
+
+    private Obstacles playerState;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +22,8 @@ public class UIManager : MonoBehaviour
             else
                 Pause();
         }
+        if(playerState.isAlive == false)
+            DeathScreen();
     }
 
     public void Resume()
@@ -34,6 +39,13 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0.0f;
         gameIsPaused = true;
     }
+
+    public void DeathScreen()
+    {
+        Debug.Log("Bless");
+        Time.timeScale = 0.0f;
+        deathScreenUI.SetActive(true);
+    }
     public void QuitGame()
     {
         Debug.Log("Quit");
@@ -43,5 +55,10 @@ public class UIManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
