@@ -24,9 +24,7 @@ public class PlayerManager : MonoBehaviour
         if(stamina == 0)
         {
             worldSpeed.speed = 0.5f;
-            Debug.Log("SlowMode Activated");
         }
-        Debug.Log(stamina);
         staminaText.text = "Stamina:" + stamina.ToString("0"); 
     }
 }
