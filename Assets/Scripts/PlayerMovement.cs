@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        anim.SetTrigger("Jump");
         direction.y = jumpForce;
     }
 }
