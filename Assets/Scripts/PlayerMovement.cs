@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Variables
     private CharacterController controller;
+    private Animator anim;
     private Vector3 direction;
     private Vector3 targetPosition;
     private int desiredLane = 0;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         Debug.Log(gameObject.name);
     }
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        anim.SetTrigger("Jump");
         direction.y = jumpForce;
     }
 }
