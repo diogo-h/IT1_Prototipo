@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private Vector3 targetPosition;
     private int desiredLane = 0;
+    private float maxLane = 1.5f;
+    private float minLane = -2.5f;
     [SerializeField] private float laneDistance = 4;
     [SerializeField] private float forwardSpeed;
     [SerializeField] private float jumpForce;
@@ -30,8 +32,7 @@ public class PlayerMovement : MonoBehaviour
             if(desiredLane == 0) desiredLane ++;
             else if(desiredLane == 1) desiredLane--;
         }
-        
-        if(controller.isGrounded)
+        if (controller.isGrounded)
         {
             direction.y = -1;
             if(Input.GetKeyDown(KeyCode.Space)) Jump();
@@ -42,19 +43,17 @@ public class PlayerMovement : MonoBehaviour
         targetPosition = transform.position.z * transform.forward + 
             transform.position.y * transform.up;
 
-        if(desiredLane == 0) targetPosition += Vector3.left * laneDistance;
-        else if (desiredLane == 1) targetPosition += Vector3.right * laneDistance;
-        else
-        {
-            if(desiredLane < 0)targetPosition += Vector3.left * laneDistance;
-            else if(desiredLane > 1) targetPosition += Vector3.right * laneDistance;
-        }
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
+        if(transform.position.x <= maxLane)
+            if (desiredLane >= 1) targetPosition += Vector3.right * laneDistance;
+        if (transform.position.x >= minLane)
+            if (desiredLane <= 0) targetPosition += Vector3.left * laneDistance;
+    
+        direction.x = targetPosition.x * 4;
     }
 
     private void FixedUpdate()
     {
-        //controller.Move(direction * Time.deltaTime);
+        controller.Move(direction * Time.deltaTime);
     }
 
     private void Jump()
