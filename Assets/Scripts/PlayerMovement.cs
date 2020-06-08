@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Variables
     private CharacterController controller;
+    private Animator anim;
     private Vector3 direction;
     private Vector3 targetPosition;
     private int desiredLane = 0;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
         Debug.Log(gameObject.name);
     }
 
@@ -49,15 +51,12 @@ public class PlayerMovement : MonoBehaviour
             if (desiredLane <= 0) targetPosition += Vector3.left * laneDistance;
     
         direction.x = targetPosition.x * 4;
-    }
 
-    private void FixedUpdate()
-    {
         controller.Move(direction * Time.deltaTime);
     }
-
     private void Jump()
     {
+        anim.SetTrigger("jump");
         direction.y = jumpForce;
     }
 }
