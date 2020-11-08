@@ -35,12 +35,24 @@ public class PlayerMovement : MonoBehaviour
             if(desiredLane == 0) desiredLane ++;
             else if(desiredLane == 1) desiredLane--;
         }
+
+        // Jumping
         if (controller.isGrounded)
         {
             direction.y = -1;
-            if(Input.GetKeyDown(KeyCode.Space)) Jump();
+
+            Debug.Log("IsGrounded right now!");
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
         }
-        else direction.y += gravity * Time.deltaTime;
+        //else
+        //{
+        //    //Debug.Log("IsNotGrounded right now!");
+        //    //direction.y += gravity * Time.deltaTime;
+        //}
 
         // Future Position
         targetPosition = transform.position.z * transform.forward + 
@@ -57,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
+        Debug.Log("Reached JUMP()");
         direction.y = jumpForce;
     }
 }

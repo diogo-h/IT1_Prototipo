@@ -43,6 +43,6 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(stamina);
+        //Debug.Log(stamina);
     }
 }
