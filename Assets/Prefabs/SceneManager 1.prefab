@@ -710,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laneDistance: 2
   forwardSpeed: 0
-  jumpForce: 7
+  jumpForce: 10
   gravity: -15
 --- !u!114 &8380254651284558469
 MonoBehaviour:

@@ -48,11 +48,11 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
         }
-        //else
-        //{
-        //    //Debug.Log("IsNotGrounded right now!");
-        //    //direction.y += gravity * Time.deltaTime;
-        //}
+        else
+        {
+            Debug.Log("IsNotGrounded right now!");
+            direction.y += gravity * Time.deltaTime;
+        }
 
         // Future Position
         targetPosition = transform.position.z * transform.forward + 
