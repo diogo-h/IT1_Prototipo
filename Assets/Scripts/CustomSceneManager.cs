@@ -33,11 +33,20 @@ namespace Lusofona
         public void ChangeLevel()
         {
             int levelIndex = SceneManager.GetActiveScene().buildIndex;
-       
+            
+            if(SceneManager.GetActiveScene().name == "tutorial_03")
+            {
+                Debug.Log("Finished tutorial");
+                SceneManager.LoadScene(0);
+                PlayerManager.stamina = 100.0f;
+            }
+
             int levelToLoadIndex = levelIndex + 1;
             if (levelToLoadIndex > SceneManager.sceneCountInBuildSettings - 1)
             {
                 levelToLoadIndex = 0;
+                Debug.Log("loaded main menu");
+                Time.timeScale = 0.0f;
             }
 
             StartCoroutine(LoadAsyncScene(levelToLoadIndex));
@@ -58,7 +67,8 @@ namespace Lusofona
 
             //Quando chega aqui as duas scenes estão ativas, dá para fazer uma transição suave entre as duas nesse meio tempo
 
-            SceneManager.UnloadSceneAsync(sceneToUnload); //Remove a scene anterior. Depois disso fica somente 1 scene ativa
+            if(sceneToUnload != null)
+                SceneManager.UnloadSceneAsync(sceneToUnload); //Remove a scene anterior. Depois disso fica somente 1 scene ativa
         }
     }
 }

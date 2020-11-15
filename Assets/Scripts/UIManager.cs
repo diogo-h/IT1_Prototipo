@@ -54,4 +54,10 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1.0f;
     }
+
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("tutorial_01");
+        Time.timeScale = 1.0f;
+    }
 }

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private int desiredLane = 0;
     private float maxLane = 1.5f;
     private float minLane = -2.5f;
+    [SerializeField] private BoxCollider jumpDetector;
     [SerializeField] private float laneDistance = 4;
     [SerializeField] private float forwardSpeed;
     [SerializeField] private float jumpForce;
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
     }
 
     private void Update()
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction.y = -1;
 
-            Debug.Log("IsGrounded right now!");
+            //Debug.Log("IsGrounded right now!");
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("IsNotGrounded right now!");
+            //Debug.Log("IsNotGrounded right now!");
             direction.y += gravity * Time.deltaTime;
         }
 

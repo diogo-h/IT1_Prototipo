@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour
     private Animator worldSpeed;
     private Animator characterSpeed;
     [SerializeField] private GameObject world;
-
     [SerializeField] private Text staminaText;
 
     private void Start()
