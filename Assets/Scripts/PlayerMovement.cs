@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private int desiredLane = 0;
     private float maxLane = 1.5f;
     private float minLane = -2.5f;
+    private float timerJump = 1;
     [SerializeField] private BoxCollider jumpDetector;
     [SerializeField] private float laneDistance = 4;
     [SerializeField] private float forwardSpeed;
@@ -30,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.z = forwardSpeed;
 
+        timerJump -= Time.deltaTime;
+
         // Movement
         if(Input.GetKeyDown(KeyCode.A))
         {
@@ -37,23 +40,32 @@ public class PlayerMovement : MonoBehaviour
             else if(desiredLane == 1) desiredLane--;
         }
 
-        // Jumping
-        if (controller.isGrounded)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            direction.y = -1;
-
-            //Debug.Log("IsGrounded right now!");
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
+            Jump();
         }
         else
         {
-            //Debug.Log("IsNotGrounded right now!");
             direction.y += gravity * Time.deltaTime;
         }
+
+        //// Jumping
+        //if (controller.isGrounded)
+        //{
+        //    direction.y = -1;
+        //
+        //    Debug.Log("IsGrounded right now!");
+        //
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        Jump();
+        //    }
+        //}
+        //else
+        //{
+        //    //Debug.Log("IsNotGrounded right now!");
+        //    direction.y += gravity * Time.deltaTime;
+        //}
 
         // Future Position
         targetPosition = transform.position.z * transform.forward + 
@@ -70,7 +82,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        Debug.Log("Reached JUMP()");
-        direction.y = jumpForce;
+        if(timerJump <= 0)
+        {
+            Debug.Log("Reached JUMP()");
+            direction.y = jumpForce;
+            timerJump = 1;
+        }
+
     }
 }
