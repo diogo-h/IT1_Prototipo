@@ -29,13 +29,13 @@ public class PlayerManager : MonoBehaviour
         if(stamina > 100) stamina = 100;
         if(stamina == 0)
         {
-            worldSpeed.speed = 0.2f;
-            characterSpeed.speed = 0.2f;
+            worldSpeed.speed = 0.4f;
+            characterSpeed.speed = 0.4f;
         }
         else
         {
-            worldSpeed.speed = 1.0f;
-            characterSpeed.speed = 1.0f;
+            worldSpeed.speed = 0.9f;
+            characterSpeed.speed = 0.9f;
         }
 
         staminaText.text = "Stamina:" + stamina.ToString("0");
