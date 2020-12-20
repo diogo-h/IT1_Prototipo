@@ -48,7 +48,14 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        IncrementStaminaBar();
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            staminaBar.gameObject.SetActive(true);
+            IncrementStaminaBar();
+        }
+        else
+            staminaBar.gameObject.SetActive(false);
+
         //Debug.Log(stamina);
     }
 }
