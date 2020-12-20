@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxLane = 1.5f;
     private float minLane = -2.5f;
     private float timerJump = 1;
+    private float timerSwap = 0.5f;
     [SerializeField] private BoxCollider jumpDetector;
     [SerializeField] private float laneDistance = 4;
     [SerializeField] private float forwardSpeed;
@@ -32,21 +33,27 @@ public class PlayerMovement : MonoBehaviour
         direction.z = forwardSpeed;
 
         timerJump -= Time.deltaTime;
+        timerSwap -= Time.deltaTime;
 
         // Movement
-        if(Input.GetKeyDown(KeyCode.A))
+        if(timerSwap <= 0)
         {
-            if(desiredLane == 0) desiredLane ++;
-            else if(desiredLane == 1) desiredLane--;
-        }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (desiredLane == 0) desiredLane++;
+                else if (desiredLane == 1) desiredLane--;
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
-        else
-        {
-            direction.y += gravity * Time.deltaTime;
+                timerSwap = 0.4f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
+            else
+            {
+                direction.y += gravity * Time.deltaTime;
+            }
         }
 
         //// Jumping

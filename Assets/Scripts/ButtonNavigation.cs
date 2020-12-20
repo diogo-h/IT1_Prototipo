@@ -7,12 +7,26 @@ using UnityEngine.EventSystems;
 public class ButtonNavigation : MonoBehaviour
 {
     [SerializeField] private string key;
+    private Button firstButton;
+    private float timer;
+
+    private void Start()
+    {
+        firstButton = GetComponent<Button>();
+        firstButton.Select();
+    }
 
     private void Update()
     {
-        if(Input.GetKeyDown(key))
+        timer -= Time.deltaTime;
+
+        if(timer <= 0)
         {
-            EventSystem.current.SetSelectedGameObject(gameObject);
+            if (Input.GetKeyDown(key))
+            {
+                EventSystem.current.SetSelectedGameObject(gameObject);
+                timer = 0.4f;
+            }
         }
     }
 }
