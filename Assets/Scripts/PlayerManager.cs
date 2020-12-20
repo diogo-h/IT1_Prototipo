@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public static float stamina;
     private Animator worldSpeed;
     private Animator characterSpeed;
+    public Slider staminaBar;
     [SerializeField] private GameObject world;
     [SerializeField] private Text staminaText;
 
@@ -40,8 +41,14 @@ public class PlayerManager : MonoBehaviour
         staminaText.text = "Stamina:" + stamina.ToString("0");
     }
 
+    private void IncrementStaminaBar()
+    {
+        staminaBar.value = stamina / 100;
+    }
+
     void Update()
     {
+        IncrementStaminaBar();
         //Debug.Log(stamina);
     }
 }

@@ -12107,26 +12107,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 289115149, guid: db76d285d7e5cac4cafbf3266ee47155, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 289115149, guid: db76d285d7e5cac4cafbf3266ee47155, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 289115149, guid: db76d285d7e5cac4cafbf3266ee47155, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 975984408, guid: db76d285d7e5cac4cafbf3266ee47155, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546041524991677820, guid: db76d285d7e5cac4cafbf3266ee47155,
+    - target: {fileID: 1570366273622015322, guid: db76d285d7e5cac4cafbf3266ee47155,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.3
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6748616067326435881, guid: db76d285d7e5cac4cafbf3266ee47155,
         type: 3}

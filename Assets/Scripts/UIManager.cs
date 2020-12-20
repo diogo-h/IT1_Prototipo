@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenuUI;
     private Obstacles playerState;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         SceneManager.LoadScene("MainMenu");
+        
     }
     public void QuitGame()
     {
