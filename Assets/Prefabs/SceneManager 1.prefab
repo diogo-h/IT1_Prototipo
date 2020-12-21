@@ -268,6 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 288864225}
   speedOptions: {fileID: 0}
+  speedChangeImage: {fileID: 0}
+  speedImages: []
 --- !u!1 &1169910887
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +732,7 @@ MonoBehaviour:
   staminaBar: {fileID: 4672288425989100274}
   world: {fileID: 6245843150043142867, guid: e48662ffdb7283e479cbdbe4e292288b, type: 3}
   staminaText: {fileID: 289115149}
-  speedChoice: {fileID: 11400000, guid: 83e5fed814c6b864c9e3d846c0e0e936, type: 2}
+  umbrellaAnimator: {fileID: 4573256200016102181}
 --- !u!1 &615856355946920137
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +968,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &4573256200016102181
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5252794909956135339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03c56bf60b2cad340a33d536a38527f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5850006287280269013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1209,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2775463863b127a43bb447f07cf555b8, type: 3}
+--- !u!1 &5252794909956135339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2732082474590006140, guid: 2775463863b127a43bb447f07cf555b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7858750197540303575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8380254650165657190
 PrefabInstance:
   m_ObjectHideFlags: 0

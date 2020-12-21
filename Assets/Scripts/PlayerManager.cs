@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public Slider staminaBar;
     [SerializeField] private GameObject world;
     [SerializeField] private Text staminaText;
+    [SerializeField] private Animator umbrellaAnimator;
     public static float speedPicked = 1.0f;
 
     private void Start()
@@ -57,11 +58,12 @@ public class PlayerManager : MonoBehaviour
         else
             staminaBar.gameObject.SetActive(false);
 
+        UmbrellaVisual();
         //Debug.Log(stamina);
     }
 
     private void UmbrellaVisual()
     {
-
+        umbrellaAnimator.SetFloat("currentStamina", stamina);
     }
 }
