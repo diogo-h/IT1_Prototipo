@@ -28025,6 +28025,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1980332227782836939, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980332227782836939, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980332227782836939, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980332227782836939, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418888625462740928, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6245843150043142865, guid: e48662ffdb7283e479cbdbe4e292288b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -28040,6 +28065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: World
       objectReference: {fileID: 0}
+    - target: {fileID: 6245843150043142877, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: fadeScreen
+      value: 
+      objectReference: {fileID: 6245843149914789000}
     - target: {fileID: 6245843150043142879, guid: e48662ffdb7283e479cbdbe4e292288b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28095,5 +28125,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.99999
       objectReference: {fileID: 0}
+    - target: {fileID: 7983246819493791378, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983246819493791378, guid: e48662ffdb7283e479cbdbe4e292288b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48662ffdb7283e479cbdbe4e292288b, type: 3}
+--- !u!95 &6245843149914789000 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 345690966537237404, guid: e48662ffdb7283e479cbdbe4e292288b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6245843149914788999}
+  m_PrefabAsset: {fileID: 0}

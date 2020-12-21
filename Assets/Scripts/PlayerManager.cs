@@ -12,8 +12,7 @@ public class PlayerManager : MonoBehaviour
     public Slider staminaBar;
     [SerializeField] private GameObject world;
     [SerializeField] private Text staminaText;
-    [SerializeField] private SpeedPreference speedChoice;
-    public static float speedPicked;
+    public static float speedPicked = 1.0f;
 
     private void Start()
     {

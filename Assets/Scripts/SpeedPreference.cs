@@ -8,4 +8,9 @@ public class SpeedPreference : ScriptableObject
     public enum SpeedChoices { Normal, Slow, VerySlow };
 
     public SpeedChoices speedPreference;
+
+    private void Awake()
+    {
+        speedPreference = SpeedChoices.Normal;
+    }
 }
