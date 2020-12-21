@@ -59,4 +59,9 @@ public class PlayerManager : MonoBehaviour
 
         //Debug.Log(stamina);
     }
+
+    private void UmbrellaVisual()
+    {
+
+    }
 }
