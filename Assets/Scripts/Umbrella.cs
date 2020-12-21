@@ -8,7 +8,7 @@ public class Umbrella : MonoBehaviour
     {
         if(other.gameObject.name == "Player")
         {
-            PlayerManager.stamina += 15.0f;
+            PlayerManager.stamina += 25.0f;
             Debug.Log("Hit");
             Destroy(gameObject);
         }

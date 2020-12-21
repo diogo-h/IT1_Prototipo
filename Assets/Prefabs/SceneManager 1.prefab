@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 288864225}
+  speedOptions: {fileID: 0}
 --- !u!1 &1169910887
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +714,7 @@ MonoBehaviour:
   laneDistance: 2
   forwardSpeed: 0
   jumpForce: 10
-  gravity: -15
+  gravity: -10
 --- !u!114 &8380254651284558469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,6 +730,7 @@ MonoBehaviour:
   staminaBar: {fileID: 4672288425989100274}
   world: {fileID: 6245843150043142867, guid: e48662ffdb7283e479cbdbe4e292288b, type: 3}
   staminaText: {fileID: 289115149}
+  speedChoice: {fileID: 11400000, guid: 83e5fed814c6b864c9e3d846c0e0e936, type: 2}
 --- !u!1 &615856355946920137
 GameObject:
   m_ObjectHideFlags: 0
