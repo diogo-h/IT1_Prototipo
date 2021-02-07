@@ -20192,7 +20192,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fadeScreen
       value: 
-      objectReference: {fileID: 2098880446}
+      objectReference: {fileID: 0}
     - target: {fileID: 6245843150043142879, guid: e48662ffdb7283e479cbdbe4e292288b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20265,12 +20265,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48662ffdb7283e479cbdbe4e292288b, type: 3}
---- !u!95 &2098880446 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 345690966537237404, guid: e48662ffdb7283e479cbdbe4e292288b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2098880445}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2113415445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4170360661628820, guid: 6b33a32ee238540e196deb1d94f361dd,

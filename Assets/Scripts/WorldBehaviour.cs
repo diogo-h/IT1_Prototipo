@@ -13,7 +13,8 @@ namespace Lusofona
 
         public void FadeScreen()
         {
-            fadeScreen.SetTrigger("Fade");
+            if(fadeScreen != null)
+                fadeScreen.SetTrigger("Fade");
         }
     }
 }

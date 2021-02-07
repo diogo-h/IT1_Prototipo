@@ -38,11 +38,12 @@ namespace Lusofona
             {
                 Debug.Log("Finished tutorial");
                 SceneManager.LoadScene(0);
+                Time.timeScale = 0.0f;
                 PlayerManager.stamina = 100.0f;
             }
 
             int levelToLoadIndex = levelIndex + 1;
-            if (levelToLoadIndex > SceneManager.sceneCountInBuildSettings - 1)
+            if (SceneManager.GetActiveScene().name == "level_03")
             {
                 levelToLoadIndex = 0;
                 Debug.Log("loaded main menu");
